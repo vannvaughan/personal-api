@@ -1,8 +1,8 @@
 var user = require('../user');
 
-module.export = {
+module.exports = {
 
-    addHeader: function(req, res){
+    addHeaders: function(req, res, next){
         res.status(200).set({
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
@@ -14,6 +14,6 @@ module.export = {
         });
     
         next();
-    };
+    },
 
 };
