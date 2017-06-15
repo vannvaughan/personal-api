@@ -5,15 +5,15 @@ var user = {
     hobbies: [
     {
       name: 'Video Games',
-      type: 'Indoor Activity'
+      type: 'indoor'
     },
     {
       name: 'Traveling',
-      type: 'Outdoor Activity'
+      type: 'outdoor'
     },
     {
       name: 'Shooting',
-      type: 'Outdoor Activity'
+      type: 'outdoor'
     }
     ],
     family: [
