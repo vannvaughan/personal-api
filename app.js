@@ -22,6 +22,12 @@ app.get('/restaurants', mainCtrl.getRestaurants);
 app.get('/getByName', mainCtrl.getRestaurantsByName);
 
 app.put('/name', mainCtrl.changeName)
+app.put('/location', mainCtrl.changeLocation)
+
+app.post('/hobbies', mainCtrl.addHobby)
+app.post('/occupations', mainCtrl.addOccupation)
+app.post('/family', mainCtrl.addFamily)
+app.post('/restaurants', mainCtrl.addRestaurant)
 
 
 app.listen(3000, function(){

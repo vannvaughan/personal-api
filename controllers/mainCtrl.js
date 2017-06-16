@@ -63,8 +63,37 @@ module.exports = {
     },
     changeName: function(req, res){
         user.name = req.body.name;
-        return res.status(200).json(changeName);
+        return res.status(200).json(user.name);
     },
+    changeLocation: function(req, res){
+        user.location = req.body.location;
+        return res.status(200).json(user.location);
+    },
+    addHobby: function(req, res){
+        var name = req.body.name;
+        var type = req.body.type;
+        user.hobbies.push({ "name":name, "type":type });
+        return res.status(200).json(user.hobbies);
+    },
+    addOccupation: function(req, res){
+       var occupation = req.body.occupation;
+       user.occupations.push(occupation); 
+       return res.status(200).json(user.occupations);
+    },
+    addFamily: function(req, res){
+        var name = req.body.name;
+        var relation = req.body.relation;
+        var gender = req.body.gender;
+        user.family.push({ "name":name, "relation":relation, "gender":gender });
+        return res.status(200).json(user.family);
+    },  
+    addRestaurant: function(req, res){
+        var name = req.body.name;
+        var type = req.body.type;
+        var rating = req.body.rating;
+        user.restaurants.push({ "name":name, "type":type , "rating":rating });
+        return res.status(200).json(user.restaurants);
+    },   
 
 
 };
