@@ -1,4 +1,5 @@
 var user = require('../user');
+var skillz = require('../skillz');
 
 module.exports = {
 
@@ -93,7 +94,25 @@ module.exports = {
         var rating = req.body.rating;
         user.restaurants.push({ "name":name, "type":type , "rating":rating });
         return res.status(200).json(user.restaurants);
-    },   
+    },
+    getSkillz: function(req, res){
+        if (req.query.experience){
+            var experience = req.query.experience;
+            var filterByExperience = skillz.filter(function(skill){
+                return skill.experience == experience;
+            });
+            return res.status(200).json(filterByExperience)
+        };
+            return res.status(200).json(skillz) 
+
+    },
+    addSkillz: function(req, res){
+        var id = req.body.id;
+        var name = req.body.name;
+        var experience = req.body.experience;
+        skillz.push({ "id": id, "name": name, "experience": experience });
+        return res.status(200).json(skillz);
+    }   
 
 
 };

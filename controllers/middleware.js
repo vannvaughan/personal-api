@@ -1,4 +1,5 @@
 var user = require('../user');
+var skillz = require('../skillz');
 
 module.exports = {
 
@@ -15,5 +16,10 @@ module.exports = {
     
         next();
     },
+    addSkillzId: function(req, res, next){
+        var id = skillz.length + 1;
+        req.body.id = id;
+        next();
+    }
 
 };
